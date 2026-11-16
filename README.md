@@ -6,9 +6,10 @@ Katalog statis bergaya macOS untuk **46 printer Ink Tank Epson**. Data diambil d
 ## Fitur
 - Tampilan jendela ala macOS: menu bar, traffic lights, sidebar ala Finder, efek frosted glass
 - Mode terang/gelap (otomatis mengikuti sistem, bisa diganti manual)
-- Filter kategori, fitur (Wi-Fi, Duplex, ADF, A3+, dll.) dan kode tinta
+- Filter kategori, fitur (Wi-Fi, Duplex, ADF, A3+, TKDN, Baru 2026) dan kode tinta
 - Pencarian Spotlight (`⌘K` / `Ctrl+K` / `/`)
-- Halaman detail berisi spesifikasi lengkap, dengan deep link `#/p/L3211`
+- Halaman detail berisi spesifikasi lengkap dengan deep link `#/p/L3211`
+- Popup *Detail Sertifikat TKDN* saat mengklik nomor sertifikat (`#/cert/<nomor sertifikat>`)
 - Perbandingan hingga 4 model lewat Dock, bisa dibagikan via `#/compare/L3211,L3251`
 - Tampilan grid dan daftar, responsif di mobile
 - Tanpa build step dan tanpa dependensi: HTML, CSS dan JS biasa
@@ -38,12 +39,12 @@ diatur manual di dict `CURATED`.
 index.html
 assets/css/style.css
 assets/js/app.js
+assets/js/cert-popup.js   # popup detail sertifikat TKDN
 assets/data/products.js   # data produk (dibuat otomatis)
+assets/data/certs.js      # data sertifikat TKDN
 assets/img/*.jpg          # foto produk
 scripts/build_data.py
 ```
 
 ## Disclaimer
-Proyek independen dan tidak berafiliasi dengan Seiko Epson Corporation. Epson, EcoTank dan foto produk
-adalah merek dagang atau hak cipta milik pemiliknya masing-masing. Harga tidak tersedia di situs resmi.
-Spesifikasi dapat berubah, jadi selalu cek ulang di situs resmi Epson.
+Proyek independen dan tidak berafiliasi dengan Seiko Epson Corporation. Epson, EcoTank dan gambar produk adalah merek/hak milik Seiko Epson Corporation. Situs ini tidak berafiliasi dengan Epson. Harga tidak tersedia di situs resmi; selalu cek ulang spesifikasi di situs resmi Epson.

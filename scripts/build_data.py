@@ -67,6 +67,9 @@ NO_DUPLEX = {"M1170"}
 NO_FAX = {"M1170", "M2170"}
 PRINT_ONLY = {"M1170"}
 FORMAT_OVERRIDE = {"WF-100": "A4", "M15140": "A3"}
+# Berdasarkan spesifikasi resmi epson.co.id: mayoritas model Duplex hanya mendukung
+# Duplex Print (cetak 2 sisi). Hanya model berikut yang memiliki Duplex Scan (ADF 2 sisi).
+DUPLEX_SCAN = {"L6370", "L6390", "L6550", "L6580", "L15150", "L15160", "L15180"}
 # Data resmi TKDN Epson (Valid efektif per 28 Agustus 2026): model -> (kode, nilai_tkdn, nilai_bmp, total, no_sertifikat)
 TKDN = {
     "L3211":  ("C11CJ68504", "52,80%", "13,65%", "66,45%", "6109/SJ-IND.8/E-TKDN/5/2025"),
@@ -280,6 +283,7 @@ def main():
             "wifi": "wi-fi" in net.lower() or "wifi" in net.lower(),
             "ethernet": "ethernet" in net.lower(),
             "duplex": yes(find(specs, r"2 Sisi")) and model not in NO_DUPLEX,
+            "duplexScan": model in DUPLEX_SCAN,
             "adf": adf,
             "resolution": find(specs, r"Resolusi (Cetak )?Maksimum").split("(")[0].strip(),
             "speedIso": find(specs, r"ISO 24734"),

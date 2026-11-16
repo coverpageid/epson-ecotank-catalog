@@ -35,7 +35,8 @@
   const FEATURES = [
     { id: "wifi", label: "Wi-Fi", test: (p) => p.wifi },
     { id: "ethernet", label: "Ethernet", test: (p) => p.ethernet },
-    { id: "duplex", label: "Duplex otomatis", test: (p) => p.duplex },
+    { id: "duplex", label: "Duplex Print", test: (p) => p.duplex },
+    { id: "duplexscan", label: "Duplex Scan (ADF)", test: (p) => p.duplexScan },
     { id: "adf", label: "ADF", test: (p) => p.adf },
     { id: "scan", label: "Scan & Copy", test: (p) => p.functions.includes("Scan") },
     { id: "fax", label: "Faks", test: (p) => p.functions.includes("Fax") },
@@ -154,7 +155,7 @@
 
   /* ---------- Filtering ---------- */
   const haystack = (p) => [p.model, p.name, p.tagline, p.sku, p.ink, catLabel(p.category), p.functions.join(" "),
-    p.wifi && "wifi wi-fi wireless", p.duplex && "duplex 2 sisi", p.adf && "adf", p.format,
+    p.wifi && "wifi wi-fi wireless", p.duplex && "duplex print 2 sisi", p.duplexScan && "duplex scan adf 2 sisi", p.adf && "adf", p.format,
     p.tkdn && `tkdn ${p.tkdnScore} ${p.tkdnCert}`, p.isNew && "baru new 2026"].join(" ").toLowerCase();
   function filtered() {
     const q = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
@@ -177,7 +178,8 @@
     if (p.functions.length > 1) out.push(`<span class="pill">${p.functions.map((f) => ({ Print: "Cetak", Scan: "Pindai", Copy: "Salin", Fax: "Faks" }[f])).join(" · ")}</span>`);
     if (p.format.startsWith("A3")) out.push(`<span class="pill purple">${esc(p.format)}</span>`);
     if (p.wifi) out.push('<span class="pill green">Wi-Fi</span>');
-    if (p.duplex) out.push('<span class="pill orange">Duplex</span>');
+    if (p.duplex) out.push('<span class="pill orange">Duplex Print</span>');
+    if (p.duplexScan) out.push('<span class="pill orange">Duplex Scan</span>');
     if (p.adf) out.push('<span class="pill">ADF</span>');
     if (p.tkdn) out.push(`<span class="pill red">TKDN ${esc(p.tkdnScore || "")}</span>`);
     return out.join("");
@@ -289,7 +291,9 @@
       ["Resolusi", p.resolution || "—"],
       ["Kecepatan ISO (H/W)", (p.speedIso || "—").replace(/^Hingga |^Up to /i, "")],
       ["Konektivitas", [p.wifi && "Wi-Fi", p.ethernet && "Ethernet", "USB"].filter(Boolean).join(" · ")],
-      ["Duplex / ADF", `${p.duplex ? "Duplex" : "—"} / ${p.adf ? "ADF" : "—"}`],
+      ["Duplex Print", p.duplex ? "Ya (Cetak 2 Sisi)" : "Tidak"],
+      ["Duplex Scan (ADF)", p.duplexScan ? "Ya (ADF 2 Sisi)" : "Tidak"],
+      ["ADF", p.adf ? "Ya" : "Tidak"],
       ["Layar", p.lcd || "—"],
       ["TKDN + BMP", p.tkdn ? p.tkdnScore : "—"],
       ...(p.tkdnCert ? [["No. Sertifikat TKDN", `<button class="cert-link" data-cert="${esc(p.tkdnCert)}" title="Lihat keterangan sertifikat">${esc(p.tkdnCert)} ↗</button>`, true]] : []),
@@ -343,7 +347,8 @@
       ["Draft (H/W)", (p) => p.speedDraft || "—"],
       ["Wi-Fi", (p) => yn(p.wifi), true],
       ["Ethernet", (p) => yn(p.ethernet), true],
-      ["Duplex otomatis", (p) => yn(p.duplex), true],
+      ["Duplex Print", (p) => yn(p.duplex), true],
+      ["Duplex Scan (ADF)", (p) => yn(p.duplexScan), true],
       ["ADF", (p) => yn(p.adf), true],
       ["TKDN + BMP", (p) => p.tkdn ? `<span class="yes">✓ ${esc(p.tkdnScore || "Ya")}</span>` : '<span class="no">—</span>', true],
       ["No. Sertifikat TKDN", (p) => p.tkdnCert ? `<button class="cert-link" data-cert="${esc(p.tkdnCert)}" title="Lihat keterangan sertifikat">${esc(p.tkdnCert)} ↗</button>` : "—", true],

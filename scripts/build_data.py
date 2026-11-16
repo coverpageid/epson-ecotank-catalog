@@ -51,19 +51,22 @@ CURATED = {
     "M1100":  ("mono", "Printer mono ringkas untuk dokumen hitam-putih volume tinggi.", "005"),
     "M1120":  ("mono", "Printer mono dengan Wi-Fi.", "005"),
     "M1140":  ("mono", "Printer mono dengan duplex otomatis dan kaset 250 lembar.", "005"),
-    "M1170":  ("mono", "Mono All-in-One dengan faks, duplex dan jaringan.", "005"),
+    "M1170":  ("mono", "Printer mono cetak saja dengan Wi-Fi dan jaringan Ethernet.", "005"),
     "M2050":  ("mono", "Mono All-in-One generasi baru dengan ADF dan Wi-Fi.", "005"),
     "M2140":  ("mono", "Mono All-in-One dengan duplex otomatis.", "005"),
-    "M2170":  ("mono", "Mono All-in-One dengan ADF, faks dan duplex.", "005"),
+    "M2170":  ("mono", "Mono All-in-One dengan ADF dan duplex otomatis.", "005"),
     "M3170":  ("mono", "Mono All-in-One dengan layar sentuh 2,4\", ADF dan faks.", "005"),
     "M15140": ("mono", "Mono A3 (TKDN 69,82%) hingga 32 ppm dengan duplex A3.", "005"),
     "M15180": ("mono", "Mono A3 kelas bisnis (TKDN 69,82%) dengan layar sentuh 4,3\".", "005"),
     "WF-100": ("portable", "Printer portabel dengan baterai, hanya 1,6 kg.", "T289/T290"),
 }
 NEW_2026 = {"L1310", "L1350", "L3311", "L3316", "L3351", "L3356", "L4360", "L5391", "L6370", "L6390", "M1050", "M2050"}
-# Halaman spesifikasi Epson menyalin string "Tipe Printer ... dengan ADF" dari
-# model lain untuk dua SKU ini. Keduanya tidak memiliki ADF (revisi Nov 2026).
+# Halaman spesifikasi Epson menyalin string/tabel dari model lain untuk beberapa SKU ini.
 NO_ADF = {"L3556", "M1170"}
+NO_DUPLEX = {"M1170"}
+NO_FAX = {"M1170", "M2170"}
+PRINT_ONLY = {"M1170"}
+FORMAT_OVERRIDE = {"WF-100": "A4", "M15140": "A3"}
 # Data resmi TKDN Epson (Valid efektif per 28 Agustus 2026): model -> (kode, nilai_tkdn, nilai_bmp, total, no_sertifikat)
 TKDN = {
     "L3211":  ("C11CJ68504", "52,80%", "13,65%", "66,45%", "6109/SJ-IND.8/E-TKDN/5/2025"),
@@ -185,24 +188,28 @@ def main():
         cats = set(specs)
         ptype = find(specs, r"Tipe Printer").lower()
         funcs = ["Print"]
-        if "Scan Function" in cats or re.search(r"scan|pindai", ptype): funcs.append("Scan")
-        if "Copying" in cats or re.search(r"copy|salin", ptype): funcs.append("Copy")
-        if "Fax Function" in cats or re.search(r"fax|faks", ptype): funcs.append("Fax")
+        if model not in PRINT_ONLY:
+            if "Scan Function" in cats or re.search(r"scan|pindai", ptype): funcs.append("Scan")
+            if "Copying" in cats or re.search(r"copy|salin", ptype): funcs.append("Copy")
+            if model not in NO_FAX and ("Fax Function" in cats or re.search(r"fax|faks", ptype)): funcs.append("Fax")
         if model in ("L3556",): funcs = ["Print", "Scan", "Copy"]  # site mislabels type
         net = find(specs, r"^Jaringan")
         paper_max = find(specs, r"Ukuran Kertas Maksimum")
         width = re.search(r"(\d{3})[.,]?\d*\s*x", paper_max)
         fmt = "A3+" if width and int(width.group(1)) >= 320 else ("A3+" if "12.95" in paper_max else "A4")
-        if model == "WF-100": fmt = "A4"
+        if model in FORMAT_OVERRIDE: fmt = FORMAT_OVERRIDE[model]
         img_file = ""
+        rel_img = f"assets/img/{p['sku']}.jpg"
+        dest = ROOT / rel_img
         if p["sku"] in images:
-            img_file = f"assets/img/{p['sku']}.jpg"
-            dest = ROOT / img_file
+            img_file = rel_img
             if not dest.exists():
                 try:
                     dest.write_bytes(get(images[p["sku"]]))
                 except Exception as e:  # keep going; UI has a fallback
                     print("img fail", model, e); img_file = ""
+        elif dest.exists():
+            img_file = rel_img
         # strip noisy/irrelevant categories for display
         clean_specs = {}
         if model in TKDN:
@@ -216,6 +223,10 @@ def main():
             }
         for c, kv in specs.items():
             if c.startswith("_"): continue
+            if model in PRINT_ONLY and c in ("Copying", "Scan Function", "Scan Speed", "Fax Function", "ADF Specifications"):
+                continue
+            if model in NO_FAX and c == "Fax Function":
+                continue
             if model in ("L6460", "L6490") and "Consumables" in c:
                 kv = {k: re.sub(r"C13T03Y([1-4])00", r"008 (C13T06G\g<1>00)", v) for k, v in kv.items()}
             if model in ("M15140", "M15180") and "Consumables" in c:
@@ -234,6 +245,17 @@ def main():
                     kv["Tipe Printer"] = t.strip().rstrip(",")
                 kv = {k: v for k, v in kv.items()
                       if "ADF" not in k and "ADF" not in str(v)}
+            if model in PRINT_ONLY and c == "Printer Type":
+                kv = {"Tipe Printer": "Cetak Saja"}
+            elif model in NO_FAX and c == "Printer Type" and "Tipe Printer" in kv:
+                kv = dict(kv)
+                kv["Tipe Printer"] = re.sub(r",?\s*(?:Faks|Fax)", "", kv["Tipe Printer"], flags=re.I).strip().rstrip(",")
+            if model in NO_DUPLEX and "Pencetakan Otomatis 2 Sisi" in kv:
+                kv = dict(kv)
+                kv["Pencetakan Otomatis 2 Sisi"] = "Tidak"
+            if model == "M15140" and c == "Paper Handling" and "Ukuran Kertas Maksimum" in kv:
+                kv = dict(kv)
+                kv["Ukuran Kertas Maksimum"] = "A3 (297 x 420 mm)"
             if not kv:
                 continue
             clean_specs[c] = kv
@@ -257,7 +279,7 @@ def main():
             "functions": funcs,
             "wifi": "wi-fi" in net.lower() or "wifi" in net.lower(),
             "ethernet": "ethernet" in net.lower(),
-            "duplex": yes(find(specs, r"2 Sisi")),
+            "duplex": yes(find(specs, r"2 Sisi")) and model not in NO_DUPLEX,
             "adf": adf,
             "resolution": find(specs, r"Resolusi (Cetak )?Maksimum").split("(")[0].strip(),
             "speedIso": find(specs, r"ISO 24734"),

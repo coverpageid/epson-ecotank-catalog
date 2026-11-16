@@ -39,7 +39,7 @@
     { id: "adf", label: "ADF", test: (p) => p.adf },
     { id: "scan", label: "Scan & Copy", test: (p) => p.functions.includes("Scan") },
     { id: "fax", label: "Faks", test: (p) => p.functions.includes("Fax") },
-    { id: "a3fmt", label: "Cetak A3+", test: (p) => p.format === "A3+" },
+    { id: "a3fmt", label: "Cetak A3 / A3+", test: (p) => p.format.startsWith("A3") },
     { id: "lcd", label: "Layar LCD", test: (p) => !!p.lcd },
     { id: "tkdn", label: "TKDN", test: (p) => p.tkdn },
     { id: "new", label: "Baru 2026", test: (p) => p.isNew },
@@ -175,7 +175,7 @@
     const out = [];
     out.push(`<span class="pill ${p.color ? "blue" : ""}">${p.color ? "Warna" : "Mono"}</span>`);
     if (p.functions.length > 1) out.push(`<span class="pill">${p.functions.map((f) => ({ Print: "Cetak", Scan: "Pindai", Copy: "Salin", Fax: "Faks" }[f])).join(" · ")}</span>`);
-    if (p.format === "A3+") out.push('<span class="pill purple">A3+</span>');
+    if (p.format.startsWith("A3")) out.push(`<span class="pill purple">${esc(p.format)}</span>`);
     if (p.wifi) out.push('<span class="pill green">Wi-Fi</span>');
     if (p.duplex) out.push('<span class="pill orange">Duplex</span>');
     if (p.adf) out.push('<span class="pill">ADF</span>');
@@ -197,7 +197,7 @@
         <div class="stat"><b>${P.length}</b><span>Model printer</span></div>
         <div class="stat"><b>${P.filter((p) => p.isNew).length}</b><span>Model baru 2026</span></div>
         <div class="stat"><b>${P.filter((p) => p.wifi).length}</b><span>Dengan Wi-Fi</span></div>
-        <div class="stat"><b>${P.filter((p) => p.format === "A3+").length}</b><span>Format A3+</span></div>
+        <div class="stat"><b>${P.filter((p) => p.format.startsWith("A3")).length}</b><span>Format A3 / A3+</span></div>
         <div class="stat"><b>s.d. 8.500</b><span>Halaman / botol hitam</span></div>
       </div>` : "");
     const g = $("#grid");

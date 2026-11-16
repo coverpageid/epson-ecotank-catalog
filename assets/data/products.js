@@ -4643,7 +4643,7 @@ window.PRODUCTS = [
   "url": "https://www.epson.co.id/Untuk-Rumah/Printer-untuk-Rumah/Ink-Tank/Ink-Tank-System-Printers/Printer-Tangki-Tinta-Epson-EcoTank-Monochrome-M1170-/p/C11CH44505",
   "image": "assets/img/C11CH44505.jpg",
   "category": "mono",
-  "tagline": "Mono All-in-One dengan faks, duplex dan jaringan.",
+  "tagline": "Printer mono cetak saja dengan Wi-Fi dan jaringan Ethernet.",
   "ink": "005",
   "isNew": false,
   "tkdn": false,
@@ -4652,14 +4652,11 @@ window.PRODUCTS = [
   "color": false,
   "format": "A4",
   "functions": [
-   "Print",
-   "Scan",
-   "Copy",
-   "Fax"
+   "Print"
   ],
   "wifi": true,
   "ethernet": true,
-  "duplex": true,
+  "duplex": false,
   "adf": false,
   "resolution": "1200 x 2400 dpi",
   "speedIso": "",
@@ -4670,35 +4667,7 @@ window.PRODUCTS = [
   "inherited": false,
   "specs": {
    "Printer Type": {
-    "Tipe Printer": "Cetak, Pindai, Salin, Faks"
-   },
-   "Copying": {
-    "Salinan Maksimum Dari Dokumen Mandiri": "99 salinan",
-    "Reduksi / Pembesaran": "25 - 400%, Fungsi Auto Fit",
-    "Resolusi Salin Maksimum": "600 x 600 dpi",
-    "ISO 29183, A4, Simpleks (Hitam)": "Hingga 17 ipm"
-   },
-   "Scan Function": {
-    "Tipe Pemindai": "Pemindai gambar berwarna flatbed",
-    "Tipe Sensor": "CIS",
-    "Resolusi Optik": "1200 x 2400 dpi",
-    "Area Pindai Maksimum": "216 x 297 mm (8.5 x 11.7\")",
-    "Kedalaman Bit Pemindai (Warna)": "Input 48-bit, Output 24-bit",
-    "Kedalaman Bit Pemindai (Skala Abu-abu)": "Input 16-bit, output 8-bit",
-    "Kedalaman Bit Pemindai (Hitam & Putih)": "Input 16-bit, output 1-bit"
-   },
-   "Scan Speed": {
-    "Flatbed (200dpi)": "Monokrom: 12 detik Warna: 27 detik"
-   },
-   "Fax Function": {
-    "Jenis Faks": "Kapabilitas menjalankan faks hitam-dan-putih serta warna",
-    "Memori Penerimaan / Memori Halaman": "2 MB, Memori halaman hingga 180 halaman (ITU-T No.1 chart)",
-    "Mode Koreksi Kesalahan": "ITU-T T.30",
-    "Kecepatan Faks (Nilai Transfer Data)": "Hingga 33,6 kbps, Sekitar 3 detik/halaman",
-    "Resolusi Faks": "Hingga 200 x 200 dpi",
-    "Ukuran Kertas Transmisi (Flatbed)": "Letter, A4",
-    "Ukuran Kertas Penerima": "Letter, A4, Legal",
-    "Panggilan Cepat / Panggilan Grup": "Hingga 100 nomor, 99 grup"
+    "Tipe Printer": "Cetak Saja"
    },
    "Paper Handling": {
     "Metode Umpan Kertas": "Umpan gesekan",
@@ -4742,7 +4711,7 @@ window.PRODUCTS = [
     "Resolusi Cetak Maksimum": "1200 x 2400 dpi (dengan Teknologi Tetesan dengan Variasi Ukuran)",
     "Ukuran Tetesan Tinta Minimum": "2.8 pl",
     "Kecepatan Cetak": "Draf Teks - Memo, A4 (Hitam): Hingga 39 ppm Waktu Keluar Halaman Pertama (Hitam): Kira-kira 6 detik (simpleks)/13 detik (dupleks) ISO 24734, A4 (Hitam): Simpleks: Hingga 20 ipm, Dupleks: 9,0 ipm",
-    "Pencetakan Otomatis 2 Sisi": "Ya",
+    "Pencetakan Otomatis 2 Sisi": "Tidak",
     "Print Speed": "Draft Text - Memo, A4 (Black): Up to 39 ppm First Page Out Time (Black): Approx. 6 sec (simplex) / 13 sec (duplex) ISO 24734, A4 (Black): Simplex: Up to 20 ipm, Duplex: 9.0 ipm",
     "Bahasa Printer": "ESC / P-R"
    }
@@ -4971,7 +4940,7 @@ window.PRODUCTS = [
   "url": "https://www.epson.co.id/Untuk-Rumah/Printer-untuk-Rumah/Ink-Tank/Ink-Tank-System-Printers/Epson-EcoTank-Monochrome-M2170-Ink-Tank-Printer/p/C11CH43507",
   "image": "assets/img/C11CH43507.jpg",
   "category": "mono",
-  "tagline": "Mono All-in-One dengan ADF, faks dan duplex.",
+  "tagline": "Mono All-in-One dengan ADF dan duplex otomatis.",
   "ink": "005",
   "isNew": false,
   "tkdn": false,
@@ -4982,8 +4951,7 @@ window.PRODUCTS = [
   "functions": [
    "Print",
    "Scan",
-   "Copy",
-   "Fax"
+   "Copy"
   ],
   "wifi": true,
   "ethernet": true,
@@ -4998,7 +4966,7 @@ window.PRODUCTS = [
   "inherited": false,
   "specs": {
    "Printer Type": {
-    "Tipe Printer": "Cetak, Pindai, Salin, Faks dengan ADF"
+    "Tipe Printer": "Cetak, Pindai, Salin dengan ADF"
    },
    "Copying": {
     "Copy Speed": "ISO 29183, A4, Simplex (Black): Simplex: Up to 17.0 ipm",
@@ -5023,17 +4991,6 @@ window.PRODUCTS = [
    },
    "ADF Specifications": {
     "Kapasitas ADF": "64 to 95 g/m"
-   },
-   "Fax Function": {
-    "Jenis Faks": "Kapabilitas menjalankan faks hitam-dan-putih serta warna",
-    "Memori Penerimaan / Memori Halaman": "2 MB, Memori halaman hingga 180 halaman (ITU-T No.1 chart)",
-    "Mode Koreksi Kesalahan": "ITU-T T.30",
-    "Kecepatan Faks (Nilai Transfer Data)": "Hingga 33,6 kbps, Sekitar 3 detik/halaman",
-    "Resolusi Faks": "Hingga 200 x 200 dpi",
-    "Ukuran Kertas Transmisi (Flatbed)": "Letter, A4",
-    "Ukuran Kertas Transmisi (ADF)": "Letter, A4, 8.5 x 13\", Legal",
-    "Ukuran Kertas Penerima": "Letter, A4, Legal",
-    "Panggilan Cepat / Panggilan Grup": "Hingga 100 nomor, 99 grup"
    },
    "Paper Handling": {
     "Metode Umpan Kertas": "Umpan gesekan",
@@ -5222,7 +5179,7 @@ window.PRODUCTS = [
   "tkdnScore": "69,82%",
   "tkdnCert": "6579/SJ-IND.8/TKDN/LVI/06/2026",
   "color": false,
-  "format": "A4",
+  "format": "A3",
   "functions": [
    "Print",
    "Scan",
@@ -5312,7 +5269,7 @@ window.PRODUCTS = [
     "Metode Umpan Kertas": "Umpan gesekan",
     "Jumlah Baki Kertas": "2",
     "Kapasitas Pemuatan Paper ": "Kapasitas Output: Hingga 100 lembar Kapasitas Input: Kaset 1: 250 Lembar-A4 /Letter Kertas Polos (80 g/m ); 10-lembar-Amplop; Slot Belakang: 1 Lembar-Kertas Polos A4",
-    "Ukuran Kertas Maksimum": "215.9 x 1200 mm (8.5 x 47.24\")",
+    "Ukuran Kertas Maksimum": "A3 (297 x 420 mm)",
     "Ukuran Kertas": "Legal, Indian-Legal (215 x 345 mm), 8,5 x 13\", Letter, A4, 16K (195 x 270 mm), B5, A5, B6, A6, Hagaki (100 x 148 mm), Amplop: #10, DL, C6",
     "Margin Cetak": "3 mm atas, kiri, kanan, Bawah melalui pengaturan khusus pada Driver printer"
    },

@@ -2943,15 +2943,15 @@ window.PRODUCTS = [
   "sku": "C11CJ30502",
   "url": "https://www.epson.co.id/Untuk-Rumah/Printer-untuk-Rumah/Work-Colour-Ink-Tank-Printers/Printer-Epson-EcoTank-L6550-A4-Colour-Wi-Fi-Duplex-All-in-One-Ink-Tank/p/C11CJ30502",
   "image": "assets/img/C11CJ30502.jpg",
-  "category": "a3",
-  "tagline": "Bisnis A3 (TKDN 44,29%), tinta pigmen, 2 kaset kertas 250 lembar.",
+  "category": "office",
+  "tagline": "Bisnis A4 (TKDN 44,29%), tinta pigmen, 2 kaset kertas 250 lembar.",
   "ink": "008",
   "isNew": false,
   "tkdn": true,
   "tkdnScore": "44,29%",
   "tkdnCert": "720/SJ-IND.8/E-TKDN/3/2024",
   "color": true,
-  "format": "A3+",
+  "format": "A4",
   "functions": [
    "Print",
    "Scan",
@@ -2987,7 +2987,7 @@ window.PRODUCTS = [
     "Arah Cetak": "Bi-directional printing",
     "Resolusi Cetak Maksimum": "4,800 x 2,400 dpi",
     "Ukuran Tetesan Tinta Minimum": "3.8 pl",
-    "Pencetakan Otomatis 2 Sisi": "Yes (up to A4)",
+    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A4)",
     "Print Speed": "Draft Text - Memo, A4 (Black/Colour): Up to 32 ppm / 22 ppm ISO 24734, A4 Simplex (Black/Colour): Up to 25 ipm / 12 ipm ISO 24734, A4 Duplex (Black/Colour): Up to 16 ipm / 9.0 ipm First Page Out Time A4 (Black/Colour): Up to 5.5 sec / 8.5 sec Photo Default - 10 x 15 cm / 4 x 6 (Border/Borderless): Approx. 43 sec per photo / 52 sec per photo",
     "Bahasa Printer": "ESC/P-R"
    },
@@ -3054,7 +3054,7 @@ window.PRODUCTS = [
     "Kapasitas Pemuatan Paper ": "Input: Cassette 1: 250 sheets of Plain Paper (80 g/m), 50 sheets of Premium Gloss Photo Paper Cassette 2: 250 sheets of Plain Paper (80 g/m) Rear Slot: 50 sheets of Plain Paper (80 g/m), 20 sheets of Premium Gloss Photo Paper Output: 125 sheets (80 g/m), 20 sheets, Premium Glossy Photo Paper",
     "Kapasitas Input Kertas Standar": "Kaset 2: Hingga 250 lembar, Kertas Polos A4 (80g/m) Slot Belakang: 1 lembar Kaset 1: Hingga 250 lembar, Kertas Polos A4 (80 g/m), 20 lembar, Kertas Foto Glossy Premium",
     "Kapasitas Output": "125 lembar, Kertas Polos A4, 20 lembar, Kertas Foto Glossy Premium",
-    "Ukuran Kertas Maksimum": "329 x 1200 mm (12.95 x 47.24 \")",
+    "Ukuran Kertas Maksimum": "215.9 x 1200 mm (A4 / Legal)",
     "Ukuran Kertas": "A3+, A3, A4, A5, A6, B4, B5, Legal, Letter, Half Letter, 5 x 7 \", 4 x 6 \", 3,5 x 5 \", Amplop: #10, DL, C6, C4",
     "Margin Cetak": "3 mm atas, kiri, kanan, Bawah melalui pengaturan khusus pada Driver printer"
    },
@@ -3107,7 +3107,7 @@ window.PRODUCTS = [
     "Konfigurasi Nozzle": "400 x 2 Nozzle Hitam, 128 x 2 Nozzle per warna (Cyan, Magenta, Kuning)",
     "Resolusi Maksimum": "4.800 x 2.400 dpi (dengan Teknologi Tetesan dengan Variasi Ukuran)",
     "Volume Tetesan Tinta Minimum": "2.8 pl",
-    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A3)"
+    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A4)"
    },
    "ADF Specifications": {
     "Ketebalan Kertas Yang Didukung": "64-95 g/m",
@@ -3125,15 +3125,15 @@ window.PRODUCTS = [
   "sku": "C11CJ28502",
   "url": "https://www.epson.co.id/Untuk-Rumah/Printer-untuk-Rumah/Work-Colour-Ink-Tank-Printers/Printer-Epson-EcoTank-L6580-A4-Colour-Wi-Fi-Duplex-All-in-One-Ink-Tank/p/C11CJ28502",
   "image": "assets/img/C11CJ28502.jpg",
-  "category": "a3",
-  "tagline": "Bisnis A3 berkinerja tinggi (TKDN 43,81%) dengan tinta pigmen.",
+  "category": "office",
+  "tagline": "Bisnis A4 berkinerja tinggi (TKDN 43,81%) dengan tinta pigmen.",
   "ink": "008",
   "isNew": false,
   "tkdn": true,
   "tkdnScore": "43,81%",
   "tkdnCert": "720/SJ-IND.8/E-TKDN/3/2024",
   "color": true,
-  "format": "A3+",
+  "format": "A4",
   "functions": [
    "Print",
    "Scan",
@@ -3170,7 +3170,7 @@ window.PRODUCTS = [
     "Resolusi Cetak Maksimum": "4,800 x 1,200 dpi",
     "Ukuran Tetesan Tinta Minimum": "3.8 pl",
     "Emulation": "PCL5 / PCL6 / PostScript3 / PDF (ver1.7)",
-    "Pencetakan Otomatis 2 Sisi": "Yes (up to A4)",
+    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A4)",
     "Print Speed": "ISO 24734, A4 Simplex (Black/Colour): Up to 25 ipm / 25 ipm ISO 24734, A4 Duplex (Black/Colour): Up to 21 ipm / 21 ipm First Page Out Time A4 (Black/Colour): Up to 5.5 sec / 5.5 sec Draft Text - Memo, A4 (Black/Colour): Up to 32 ppm / 32 ppm Photo Default - 10 x 15 cm / 4 x 6 (Border/Borderless): Approx. 26 sec per photo / 27 sec per photo",
     "Bahasa Printer": "ESC/P-R"
    },
@@ -3237,7 +3237,7 @@ window.PRODUCTS = [
     "Kapasitas Pemuatan Paper ": "Input: Cassette 1: 250 sheets of Plain Paper (80 g/m), 50 sheets of Premium Gloss Photo Paper Cassette 2: 250 sheets of Plain Paper (80 g/m) Rear Slot: 50 sheets of Plain Paper (80 g/m), 20 sheets of Premium Gloss Photo Paper Output: 125 sheets (80 g/m), 20 sheets, Premium Glossy Photo Paper",
     "Kapasitas Input Kertas Standar": "Kaset 1: Hingga 250 lembar, Kertas Polos A4 (80 g/m), 20 lembar, Kertas Foto Glossy Premium Slot Belakang: 1 lembar Kaset 2: Hingga 250 lembar, Kertas Polos A4 (80g/m)",
     "Kapasitas Output": "125 lembar, Kertas Polos A4, 20 lembar, Kertas Foto Glossy Premium",
-    "Ukuran Kertas Maksimum": "329 x 1200 mm (12.95 x 47.24 \")",
+    "Ukuran Kertas Maksimum": "215.9 x 1200 mm (A4 / Legal)",
     "Ukuran Kertas": "A3+, A3, A4, A5, A6, B4, B5, Legal, Letter, Half Letter, 5 x 7 \", 4 x 6 \", 3,5 x 5 \", Amplop: #10, DL, C6, C4",
     "Margin Cetak": "3 mm atas, kiri, kanan, Bawah melalui pengaturan khusus pada Driver printer"
    },
@@ -3290,7 +3290,7 @@ window.PRODUCTS = [
     "Konfigurasi Nozzle": "400 x 2 Nozzle Hitam, 128 x 2 Nozzle per warna (Cyan, Magenta, Kuning)",
     "Resolusi Maksimum": "4.800 x 2.400 dpi (dengan Teknologi Tetesan dengan Variasi Ukuran)",
     "Volume Tetesan Tinta Minimum": "2.8 pl",
-    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A3)"
+    "Pencetakan Otomatis 2 Sisi": "Ya (hingga A4)"
    },
    "ADF Specifications": {
     "Ketebalan Kertas Yang Didukung": "64-95 g/m",

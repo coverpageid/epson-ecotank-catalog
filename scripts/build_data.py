@@ -39,8 +39,8 @@ CURATED = {
     "L6460":  ("office", "Duplex dan ADF dengan kecepatan hingga 15 ipm.", "008"),
     "L6490":  ("office", "Duplex, ADF dan faks untuk kantor yang sibuk.", "008"),
     "L14150": ("a3", "All-in-One A3+ dengan duplex, ADF, faks dan Ethernet.", "001"),
-    "L6550":  ("a3", "Bisnis A3 (TKDN 44,29%), tinta pigmen, 2 kaset kertas 250 lembar.", "008"),
-    "L6580":  ("a3", "Bisnis A3 berkinerja tinggi (TKDN 43,81%) dengan tinta pigmen.", "008"),
+    "L6550":  ("office", "Bisnis A4 (TKDN 44,29%), tinta pigmen, 2 kaset kertas 250 lembar.", "008"),
+    "L6580":  ("office", "Bisnis A4 berkinerja tinggi (TKDN 43,81%) dengan tinta pigmen.", "008"),
     "L15150": ("a3", "A3 penuh (TKDN 68,94%): cetak, pindai, salin dan duplex hingga A3.", "008"),
     "L15160": ("a3", "A3 penuh (TKDN 67,05%) dengan kecepatan hingga 25 ipm.", "008"),
     "L15180": ("a3", "A3 penuh (TKDN 67,02%) dengan layar sentuh 4,3\" & Smart Panel.", "008"),
@@ -66,7 +66,7 @@ NO_ADF = {"L3556", "M1170"}
 NO_DUPLEX = {"M1170"}
 NO_FAX = {"M1170", "M2170"}
 PRINT_ONLY = {"M1170"}
-FORMAT_OVERRIDE = {"WF-100": "A4", "M15140": "A3"}
+FORMAT_OVERRIDE = {"WF-100": "A4", "M15140": "A3", "L6550": "A4", "L6580": "A4"}
 # Berdasarkan spesifikasi resmi epson.co.id: mayoritas model Duplex hanya mendukung
 # Duplex Print (cetak 2 sisi). Hanya model berikut yang memiliki Duplex Scan (ADF 2 sisi).
 DUPLEX_SCAN = {"L6370", "L6390", "L6550", "L6580", "L15150", "L15160", "L15180"}
@@ -259,6 +259,13 @@ def main():
             if model == "M15140" and c == "Paper Handling" and "Ukuran Kertas Maksimum" in kv:
                 kv = dict(kv)
                 kv["Ukuran Kertas Maksimum"] = "A3 (297 x 420 mm)"
+            if model in ("L6550", "L6580"):
+                if c == "Paper Handling" and "Ukuran Kertas Maksimum" in kv:
+                    kv = dict(kv)
+                    kv["Ukuran Kertas Maksimum"] = "215.9 x 1200 mm (A4 / Legal)"
+                if "Pencetakan Otomatis 2 Sisi" in kv:
+                    kv = dict(kv)
+                    kv["Pencetakan Otomatis 2 Sisi"] = "Ya (hingga A4)"
             if not kv:
                 continue
             clean_specs[c] = kv

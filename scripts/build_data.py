@@ -72,7 +72,7 @@ FORMAT_OVERRIDE = {"WF-100": "A4", "M15140": "A3", "L6550": "A4", "L6580": "A4"}
 DUPLEX_SCAN = {"L6370", "L6390", "L6550", "L6580", "L15150", "L15160", "L15180"}
 # Data resmi TKDN Epson (Valid efektif per 28 Agustus 2026): model -> (kode, nilai_tkdn, nilai_bmp, total, no_sertifikat)
 TKDN = {
-    "L3211":  ("C11CJ68504", "52,80%", "13,65%", "66,45%", "6109/SJ-IND.8/E-TKDN/5/2025"),
+    "L3211":  ("C11CJ68504", "52,80%", "13,65%", "66,45%", "6110/SJ-IND.8/E-KDN/5/2025"),
     "L3251":  ("C11CJ67506", "61,63%", "13,65%", "75,28%", "6109/SJ-IND.8/E-TKDN/5/2025"),
     "L15150": ("C11CH72502", "55,29%", "13,65%", "68,94%", "5391/SJ-IND.8/TKDN/LVI/06/2026"),
     "L15160": ("C11CH71501", "53,40%", "13,65%", "67,05%", "6581/SJ-IND.8/TKDN/LVI/06/2026"),
@@ -107,7 +107,7 @@ TKDN_SPECS = {
         "Consumables - Updated": {
             "Ink Model": "003 (CMYK) — TKDN: Bk 25,65% · C 25,25% · M 25,72% · Y 25,54% (Sertifikat 4000, 4004–4006/SJ-IND.8/TKDN/LVI/05/2026)",
             "Garansi": "2 years or 30,000 pages (+1 year with MyEpson Portal)",
-            "Nomor Sertifikat TKDN": "6109/SJ-IND.8/E-TKDN/5/2025",
+            "Nomor Sertifikat TKDN": "6110/SJ-IND.8/E-KDN/5/2025",
             "Total Nilai TKDN + BMP": "66,45% (TKDN 52,80% + BMP 13,65%)",
         },
     },

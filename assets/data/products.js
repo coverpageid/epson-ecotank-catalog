@@ -385,7 +385,7 @@ window.PRODUCTS = [
   "isNew": false,
   "tkdn": true,
   "tkdnScore": "66,45%",
-  "tkdnCert": "6109/SJ-IND.8/E-TKDN/5/2025",
+  "tkdnCert": "6110/SJ-IND.8/E-KDN/5/2025",
   "color": true,
   "format": "A4",
   "functions": [
@@ -407,7 +407,7 @@ window.PRODUCTS = [
   "inherited": false,
   "specs": {
    "Sertifikasi TKDN Kemenperin RI": {
-    "Nomor Sertifikat TKDN": "6109/SJ-IND.8/E-TKDN/5/2025",
+    "Nomor Sertifikat TKDN": "6110/SJ-IND.8/E-KDN/5/2025",
     "Kode Produk TKDN": "C11CJ68504",
     "Nilai TKDN": "52,80%",
     "Nilai BMP": "13,65%",
@@ -460,7 +460,7 @@ window.PRODUCTS = [
    "Consumables - Updated": {
     "Ink Model": "003 (CMYK) — TKDN: Bk 25,65% · C 25,25% · M 25,72% · Y 25,54% (Sertifikat 4000, 4004–4006/SJ-IND.8/TKDN/LVI/05/2026)",
     "Garansi": "2 years or 30,000 pages (+1 year with MyEpson Portal)",
-    "Nomor Sertifikat TKDN": "6109/SJ-IND.8/E-TKDN/5/2025",
+    "Nomor Sertifikat TKDN": "6110/SJ-IND.8/E-KDN/5/2025",
     "Total Nilai TKDN + BMP": "66,45% (TKDN 52,80% + BMP 13,65%)"
    },
    "Electrical Specifications": {
